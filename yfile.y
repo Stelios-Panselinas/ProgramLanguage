@@ -7,13 +7,13 @@
 //  Ας πούμε ότι έχουμε το ακόλουθο πρόγραμμα σε ψευδογλώσσα:
 
 
-public class MyClass {
-    private int myVariable;
-
-    public void myMethod() {
-        out.print("Hello, world!");
-    }
-}
+//public class MyClass {
+//    private int myVariable;
+//
+//    public void myMethod() {
+//        out.print("Hello, world!");
+//   }
+//}
 
 
 //  Τότε, η αντίστοιχη γραμματική μπορεί να είναι κάπως έτσι:
