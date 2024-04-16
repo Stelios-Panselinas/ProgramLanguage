@@ -1,0 +1,79 @@
+<program> ::= <class_declaration> | <class_declaration> <program>
+
+<class_declaration> ::= "public class" <class_name> "{" <optional_variable_declaration> <optional_method_declaration> "}"
+
+<class_name> ::= [A-Z] [a-z]
+
+<class_name_suffix> ::= <letter> | <letter> <class_name_suffix> | <digit> <class_name_suffix>
+
+<optional_variable_declaration> ::= <variable_declaration> | ε
+
+<optional_method_declaration> ::= <method_declaration> | ε
+
+<variable_declaration> ::= [<modifier>] <data_type> <variable_name>;
+
+<modifier> ::= "public" | "private"
+
+<data_type> ::= "int" | "char" | "double" | "boolean" | "String"
+
+<variable_name> ::= <identifier>
+
+<method_declaration> ::= [<modifier>] <return_type> <method_name> "(" <optional_parameter_list> ")" "{" <optional_variable_declaration> <statements> "}"
+
+<return_type> ::= <data_type> | "void"
+
+<method_name> ::= <identifier>
+
+<optional_parameter_list> ::= <parameter_list> | ε
+
+<parameter_list> ::= <data_type> <identifier> | <data_type> <identifier> "," <parameter_list>
+
+<statements> ::= <statement> | <statement> <statements>
+
+<statement> ::= <assignment_statement> | <loop_statement> | <conditional_statement> | <print_statement> | <return_statement> | <break_statement>
+
+<assignment_statement> ::= <variable_name> "=" <expression>;
+
+<loop_statement> ::= "do" "{" <statements> "}" "while" "(" <expression> ")"; | "for" "(" <expression> ";" <expression> ";" <expression> ")" "{" <statements> "}"
+
+<conditional_statement> ::= "if" "(" <expression> ")" "{" <statements> "}" | "if" "(" <expression> ")" "{" <statements> "}" "else" "{" <statements> "}"
+
+<print_statement> ::= "out.print" "(" <string_literal> ")";
+
+<return_statement> ::= "return" <expression>;
+
+<break_statement> ::= "break";
+
+<expression> ::= <identifier> | <literal> | <method_call> | <expression> "+" <expression> | <expression> "-" <expression> | <expression> "*" <expression> | <expression> "/" <expression>
+
+<literal> ::= <integer_literal> | <char_literal> | <double_literal> | <boolean_literal> | <string_literal>
+
+<method_call> ::= <identifier> "." <method_name> "(" <optional_argument_list> ")"
+
+<optional_argument_list> ::= <argument_list> | ε
+
+<argument_list> ::= <expression> | <expression> "," <argument_list>
+
+<integer_literal> ::= <digit> | <digit> <integer_literal>
+
+<char_literal> ::= "'" <character> "'"
+
+<double_literal> ::= <digit> "." <digit> "d"
+
+<boolean_literal> ::= "true" | "false"
+
+<string_literal> ::= """ <characters> """
+
+<digit> ::= [0-9]
+
+<letter> ::= [A-Za-z]
+
+<uppercase_letter> ::= [A-Z]
+
+<lowercase_letter> ::= [a-z]
+
+<character> ::= [A-Za-z0-9!@#$%^&*()-_+=?<>.,]
+
+<identifier> ::= <letter> | <letter> <identifier> | "_" <identifier>
+
+<characters> ::= <character> | <character> <characters>

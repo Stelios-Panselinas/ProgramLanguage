@@ -1,0 +1,14 @@
+<whitespace> ::=" "
+<language> ::= <programm>
+<programm> ::= <class> | <programm> <class>
+<class> ::= <class> | <variable> | <method> | <class> <variable> | <class> <method> | <variable> <method>  | <class> <variable> <method>
+<variable> ::= <datatype>
+<datatype> ::= <primitive> | <noprimitive>
+<primitive> ::= "int" <int> | "char" <char> | "double" <double> | "boolean" <boolean> 
+<int> ::= (0|[1-9][0-9]*)(\.[0-9]+)?
+<char> ::= '[a-z] | [A-Z]' |'\n'| '\t' | '\r' | '[0-9]'
+<double> ::= ^(0 | [1-9] [0-9]*) (\. [0-9] +)?d$
+<boolean> ::= "0" | "1"
+<noprimitive> ::= <String> | <noprimitive> <String>
+<String> ::= ^.*$
+<method> :<variable>
