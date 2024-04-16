@@ -2,7 +2,7 @@
 
 <class_declaration> ::= "public class" <class_name> "{" <optional_variable_declaration> <optional_method_declaration> "}"
 
-<class_name> ::= <uppercase_letter> <class_name_suffix>
+<class_name> ::= [A-Z] [a-z]
 
 <class_name_suffix> ::= <letter> | <letter> <class_name_suffix> | <digit> <class_name_suffix>
 
